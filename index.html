@@ -69,6 +69,9 @@ function draw(){
     ctx.drawImage(video, 0, 0);
     for (let i = 0; i < objects.length; i++) {
       
+      var utter = new SpeechSynthesisUtterance(objects[i].label)
+      window.speechSynthesis.speak(utter)
+      
       ctx.font = "16px Arial";
       ctx.fillStyle = "green";
       ctx.fillText(objects[i].label, objects[i].x * width + 4, objects[i].y * height + 16); 
