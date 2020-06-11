@@ -95,7 +95,9 @@ async function getVideo(){
     document.body.appendChild(videoElement);
 
     // Create a webcam capture
-    const capture = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } })
+    const capture = await navigator.mediaDevices.getUserMedia({ 
+      video: { width: 640, height: 480, facingMode: { exact: "environment" } } 
+    })
     videoElement.srcObject = capture;
     videoElement.play();
 
